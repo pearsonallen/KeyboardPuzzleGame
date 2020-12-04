@@ -1,38 +1,99 @@
-.App {
+:root {
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.keyboard {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.keyboardRow { 
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .key { 
+    color: #111;
+    background: #fff;
+    box-shadow: .2rem .1rem .3rem rgba(0,0,0,.3);
+    display:inline-block;
+    border:1px solid #ccc;
+    padding:1.5rem;
+    margin: .5rem .3rem;
+    min-width: 2rem;
+    font-size: 1.6rem;
+  }
+  
+.selected {
+  animation-duration: 1.5s;
+  animation-name: showem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+}
+.input {
+  max-width: 800px;
+  margin: 5rem auto;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type=text] {
+  width: 70%;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
+  color: #666;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.submit-guess {
+  width: 20%;
+  border: 1px solid #ccc;
+  background: green;
   color: white;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  margin-left:-5px;
+  transition: .4s ease all;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .submit-guess :hover {
+    background: darkgreen;
+    cursor: pointer;
+    box-shadow: .1rem .1rem .5rem rgba(0,0,0,.5);
   }
+
+
+.next-round {
+  width: 75%;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  margin: 5rem auto;
+  background: #02456B;
+  color: #fff;
+  text-align: center;
+  transition: .4s ease all;
+}
+  .next-round :hover {
+    background: darkblue;
+    cursor: pointer;
+    box-shadow: .1rem .1rem .5rem rgba(0,0,0,.5);
+  }
+
+@keyframes showem {
+  from {
+    background: #02456B;
+    color: #fff;
+    box-shadow: 0;
+  }
+
   to {
-    transform: rotate(360deg);
+    background: #fff;
+    color: #111;
+    box-shadow: .2rem .1rem .3rem rgba(0,0,0, .3);
   }
 }
