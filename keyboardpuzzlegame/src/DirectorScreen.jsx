@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from "react";
 
+
+function RoundGenerator(props) {
+  return (
+    <div>
+      <input placeholder="Letter Count" />
+      <button>Start Next Round</button>
+    </div>
+  )
+}
+
+
 function DirectorScreen() {
   const [stats, setStats] = useState({
   });
@@ -29,6 +40,8 @@ function DirectorScreen() {
   }
   return (
     <div>
+    <RoundGenerator />
+    <div>
       <h3>Game ID: {stats.gameId}</h3>
       <h3>Round ID: {stats.roundId}</h3>
       <h5>Expected Letters: {stats.expectedValue}</h5>
@@ -45,6 +58,7 @@ function DirectorScreen() {
           })
         }
       </table>
+    </div>
     </div>
   );
 }
